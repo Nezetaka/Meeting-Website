@@ -1,0 +1,28 @@
+{
+  "name": "meeting-website",
+  "version": "1.0.0",
+  "description": "diploma project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nezetaka/Meeting-Website.git"
+  },
+  "keywords": [
+    "online-chat",
+    "express",
+    "socket.io"
+  ],
+  "author": "Karen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nezetaka/Meeting-Website/issues"
+  },
+  "homepage": "https://github.com/Nezetaka/Meeting-Website#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nunjucks": "^3.2.0"
+  }
+}
