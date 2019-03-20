@@ -31,16 +31,16 @@ $( document ).ready( () => {
     var socket = io.connect('http://localhost:3000');
     socket.on('connected', function (msg) {
         console.log(msg);
-        socket.emit('receiveHistory');
+        //socket.emit('receiveHistory');
     });
 
     socket.on('message', addMessage);
 
-    socket.on('history', messages => {
-        for (let message of messages) {
-            addMessage(message);
-        }
-    });
+    // socket.on('history', messages => {
+    //     for (let message of messages) {
+    //         addMessage(message);
+    //     }
+    // });
 
     $('.chat-message button').on('click', e => {
         e.preventDefault();
