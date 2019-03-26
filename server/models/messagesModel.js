@@ -12,4 +12,4 @@ const MessageSchema = new Schema({
   collection: "MessageCollection"
 });
 
-module.export = mongoose.model('MessageModel', MessageSchema);
+module.exports = mongoose.model('MessageModel', MessageSchema);
