@@ -358,3 +358,11 @@ a.logout-btn:hover:enabled, a.logout-btn:active, a.logout-btn:focus {
 button:disabled {
     background: gray;
 }
+
+a {
+  text-decoration: none;
+}
+
+#profileLink:hover {
+  color: lime;
+}

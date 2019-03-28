@@ -31,12 +31,18 @@
             </div>
         </div>
         <script src="/assets/js/unauth.js"></script>
+    {% elif profile %}
+    <div class="container clearfix">
+      Profile {{ profile }}
+    </div>
     {% else %}
         <div class="container clearfix">
+
             <div class="chat">
                 <div class="chat-header clearfix">
                     <div class="chat-about">
-                        <div class="chat-num-users">Hello, <span id="name">{{ username }}</span></div>
+                        <div class="chat-num-users">
+                          <a id="profileLink" href="/profile"><span id="name">{{ username }}</span></a></div>
                     </div>
                     <div class="controls">
                         <a href="#" class="logout-btn">Logout</a>
