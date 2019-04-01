@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Chat</title>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     {% if not error %}
         <script src='/socket.io/socket.io.js'></script>
@@ -32,8 +33,72 @@
         </div>
         <script src="/assets/js/unauth.js"></script>
     {% elif profile %}
-    <div class="container clearfix">
-      Profile {{ profile }}
+    <div class="container clearfix profile">
+      <div class="profileHeader">
+        <div class="row">
+            <div class="col-sm-5">
+              <div class="profileImage">
+                <img src="http://www.radionetplus.ru/uploads/posts/2013-05/1369460621_panda-26.jpg" alt="avatar">
+              </div>
+            </div>
+            <div class="col-sm-7">
+              <div class="profileDesc">
+                <div class="profileName">
+                  {{ profile }}
+                </div><br>
+                <div class="profileStatus">
+                  <input type="text" name="status" placeholder="Something on my mind..."/>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div><hr>
+
+      <div class="profileContent">
+        <div class="row">
+          <div class="col-sm-3">
+            Date of birth
+          </div>
+          <div class="col-sm">
+            <input type="date" name="birthday">
+          </div>
+        </div><br>
+
+        <div class="row">
+          <div class="col-sm-3">
+            Address
+          </div>
+          <div class="col-sm">
+            <input type="text" name="address" placeholder="My address is ...">
+          </div>
+        </div><br>
+
+        <div class="row">
+          <div class="col-sm-3">
+            Contact with me:
+          </div>
+          <div class="col-sm">
+            <div class="contacts">
+              <textarea name="contacts" placeholder ="Telephone: +380*********" rows="5"></textarea>
+            </div>
+          </div>
+        </div><br>
+
+        <div class="row">
+          <div class="col-sm-3">
+            About me
+          </div>
+          <div class="col-sm">
+            <div class="about">
+              <textarea name="about" placeholder ="My dream is ..." rows="12"></textarea>
+            </div>
+          </div>
+        </div><br>
+
+        <div class="submitButton">
+          <input type="submit" name="submitChanges" value="Save">
+        </div>
+      </div>
     </div>
     {% else %}
         <div class="container clearfix">
