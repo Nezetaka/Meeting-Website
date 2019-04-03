@@ -363,7 +363,7 @@ a {
   text-decoration: none;
 }
 
-#profileLink:hover {
+.headLinks:hover {
   color: lime;
 }
 
@@ -409,4 +409,36 @@ a {
 
 .about textarea {
   width: 100%;
+}
+
+.menu {
+  background: #3c4c66;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.menu ul li {
+  float: left;
+  padding: 10px 50px;
+}
+
+.menu ul li:first-child {
+  margin-left: 15.5%;
+}
+
+.menu ul li:last-child {
+  float: right;
+  margin-right: 17.5%;
+}
+
+.menu ul a{
+  display: block;
+  padding: 0 40px;
+  text-decoration: none;
+  color: #ffffff;
 }

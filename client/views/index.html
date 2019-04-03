@@ -33,6 +33,16 @@
         </div>
         <script src="/assets/js/unauth.js"></script>
     {% elif profile %}
+    <div class="menu clearfix">
+      <ul>
+        <li><a id="profileLink" class="headLinks" href="/profile"><span id="name">{{ profile }}</span></a></li>
+        <li><a id="chatLink" class="headLinks" href="/"><span>Chat</span></a></li>
+        <li><a id="postLink" class="headLinks" href="/posts"><span>Posts</span></a></li>
+        <li><div class="controls">
+            <a href="#" class="logout-btn">Logout</a>
+        </div></li>
+      </ul>
+    </div>
     <div class="container clearfix profile">
       <div class="profileHeader">
         <div class="row">
@@ -90,7 +100,7 @@
           </div>
           <div class="col-sm">
             <div class="about">
-              <textarea name="about" placeholder ="My dream is ..." rows="12"></textarea>
+              <textarea name="about" placeholder ="My dream is ..." rows="10"></textarea>
             </div>
           </div>
         </div><br>
@@ -100,17 +110,26 @@
         </div>
       </div>
     </div>
+    <script src="/assets/js/auth.js"></script>
     {% else %}
+      <div class="menu clearfix">
+        <ul>
+          <li><a id="profileLink" class="headLinks" href="/profile"><span id="name">{{ username }}</span></a></li>
+          <li><a id="chatLink" class="headLinks" href="/"><span>Chat</span></a></li>
+          <li><a id="postLink"class="headLinks"  href="/posts"><span>Posts</span></a></li>
+          <li><div class="controls">
+              <a href="#" class="logout-btn">Logout</a>
+          </div></li>
+        </ul>
+      </div>
         <div class="container clearfix">
 
             <div class="chat">
                 <div class="chat-header clearfix">
                     <div class="chat-about">
                         <div class="chat-num-users">
-                          <a id="profileLink" href="/profile"><span id="name">{{ username }}</span></a></div>
-                    </div>
-                    <div class="controls">
-                        <a href="#" class="logout-btn">Logout</a>
+                          <span id="name">Hello, {{ username }}</span>
+                        </div>
                     </div>
                 </div>
 
