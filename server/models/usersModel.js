@@ -10,8 +10,8 @@ const UsersSchema = new Schema ({
   addedAt: {type: Date, default: Date.now},
   status: {type: String},
   birthday: {type: Date},
-  adress: {type: String},
-  contact: {type: String},
+  address: {type: String},
+  contacts: {type: String},
   about: {type: String}
 }, {
   versionKey: false,

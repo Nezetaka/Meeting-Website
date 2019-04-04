@@ -43,6 +43,7 @@
         </div></li>
       </ul>
     </div>
+    <form class="content" method="post">
     <div class="container clearfix profile">
       <div class="profileHeader">
         <div class="row">
@@ -54,10 +55,11 @@
             <div class="col-sm-7">
               <div class="profileDesc">
                 <div class="profileName">
-                  {{ profile }}
+                  <span name="username2"> {{ profile }} </span>
+                  <input type="text" name="username" placeholder="My address is ..." value="{{ profile }}" style="display: none;" />
                 </div><br>
                 <div class="profileStatus">
-                  <input type="text" name="status" placeholder="Something on my mind..."/>
+                  <input type="text" name="status" placeholder="Something on my mind..." value="{{ status }}" />
                 </div>
               </div>
             </div>
@@ -70,7 +72,7 @@
             Date of birth
           </div>
           <div class="col-sm">
-            <input type="date" name="birthday">
+            <input type="date" name="birthday" value="{{ birthday }}" />
           </div>
         </div><br>
 
@@ -79,7 +81,7 @@
             Address
           </div>
           <div class="col-sm">
-            <input type="text" name="address" placeholder="My address is ...">
+            <input type="text" name="address" placeholder="My address is ..." value="{{ address }}" />
           </div>
         </div><br>
 
@@ -89,7 +91,7 @@
           </div>
           <div class="col-sm">
             <div class="contacts">
-              <textarea name="contacts" placeholder ="Telephone: +380*********" rows="5"></textarea>
+              <textarea name="contacts" placeholder ="Telephone: +380*********" rows="5">{{ contacts }}</textarea>
             </div>
           </div>
         </div><br>
@@ -100,7 +102,7 @@
           </div>
           <div class="col-sm">
             <div class="about">
-              <textarea name="about" placeholder ="My dream is ..." rows="10"></textarea>
+              <textarea name="about" placeholder ="My dream is ..." rows="10">{{ about }}</textarea>
             </div>
           </div>
         </div><br>
@@ -109,8 +111,10 @@
           <input type="submit" name="submitChanges" value="Save">
         </div>
       </div>
+    </form>
     </div>
     <script src="/assets/js/auth.js"></script>
+    <script src="/assets/js/unauth.js"></script>
     {% else %}
       <div class="menu clearfix">
         <ul>

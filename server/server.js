@@ -20,10 +20,13 @@ passport.use(new Strategy(jwt, function(jwt_payload, done) {
   done();
 }));
 
+// connect to database
 mongoose.connect('mongodb://localhost:27017/chat');
 mongoose.Promise = require('bluebird');
+// debug
 mongoose.set('debug', true);
 
+// template
 nunjucks.configure('./client/views', {
   autoescape: true,
   express: app

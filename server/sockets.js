@@ -6,6 +6,7 @@ module.exports = io => {
   io.on('connection', function (socket) {
     socket.emit('connected', 'You are connected.');
 
+    // join to room
     socket.join('all');
 
     socket.on('msg', content => {
@@ -22,6 +23,7 @@ module.exports = io => {
        });
     });
 
+    // get messages
     socket.on('receiveHistory', () => {
       MessageModel
         .find({})
