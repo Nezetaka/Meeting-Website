@@ -39,7 +39,7 @@
         <li><a id="chatLink" class="headLinks" href="/"><span>Chat</span></a></li>
         <li><a id="postLink" class="headLinks" href="/posts"><span>Posts</span></a></li>
         <li><div class="controls">
-            <a href="#" class="logout-btn">Logout</a>
+            <a href="#" class="logout-btn">Logout   <img src="https://img.icons8.com/ios/50/000000/exit.png"></a>
         </div></li>
       </ul>
     </div>
@@ -60,6 +60,9 @@
                 </div><br>
                 <div class="profileStatus">
                   <input type="text" name="status" placeholder="Something on my mind..." value="{{ status }}" />
+                </div><br>
+                <div class="btnWriteMessage">
+                  <a href="#"><img src="https://img.icons8.com/ios/50/000000/new-post.png"> Message</a>
                 </div>
               </div>
             </div>
@@ -69,19 +72,19 @@
       <div class="profileContent">
         <div class="row">
           <div class="col-sm-3">
-            Date of birth
+            Date of birth:
           </div>
           <div class="col-sm">
-            <input type="date" name="birthday" value="{{ birthday }}" />
+            <input class="inputField" type="date" name="birthday" value="{{ birthday }}" />
           </div>
         </div><br>
 
         <div class="row">
           <div class="col-sm-3">
-            Address
+            Address:
           </div>
           <div class="col-sm">
-            <input type="text" name="address" placeholder="My address is ..." value="{{ address }}" />
+            <input class="inputField" type="text" name="address" placeholder="My address is ..." value="{{ address }}" />
           </div>
         </div><br>
 
@@ -91,24 +94,24 @@
           </div>
           <div class="col-sm">
             <div class="contacts">
-              <textarea name="contacts" placeholder ="Telephone: +380*********" rows="5">{{ contacts }}</textarea>
+              <textarea class="inputField" name="contacts" placeholder ="Telephone: +380*********" rows="5">{{ contacts }}</textarea>
             </div>
           </div>
         </div><br>
 
         <div class="row">
           <div class="col-sm-3">
-            About me
+            About me:
           </div>
           <div class="col-sm">
             <div class="about">
-              <textarea name="about" placeholder ="My dream is ..." rows="10">{{ about }}</textarea>
+              <textarea class="inputField" name="about" placeholder ="My dream is ..." rows="10">{{ about }}</textarea>
             </div>
           </div>
         </div><br>
 
         <div class="submitButton">
-          <input type="submit" name="submitChanges" value="Save">
+          <input class="btnSave" type="submit" name="submitChanges" value="Save">
         </div>
       </div>
     </form>
@@ -122,7 +125,7 @@
           <li><a id="chatLink" class="headLinks" href="/"><span>Chat</span></a></li>
           <li><a id="postLink"class="headLinks"  href="/posts"><span>Posts</span></a></li>
           <li><div class="controls">
-              <a href="#" class="logout-btn">Logout</a>
+              <a href="#" class="logout-btn">Logout   <img src="https://img.icons8.com/ios/50/000000/exit.png"></a>
           </div></li>
         </ul>
       </div>
@@ -144,7 +147,7 @@
 
                 <div class="chat-message clearfix">
                     <textarea name="message" placeholder ="Type your message" rows="3"></textarea>
-                    <button type="submit">Send</button>
+                    <button type="submit"><img src="https://img.icons8.com/ios-glyphs/30/000000/paper-plane.png">Send</button>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
 
 body {
     background: #C5DDEB;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -378,6 +378,7 @@ a {
 .profileImage img {
   border-radius: 75%;
   width: 100%;
+  border: 2px solid black;
 }
 
 .profileName {
@@ -390,17 +391,42 @@ a {
   background: inherit;
 }
 
+.btnWriteMessage {
+  display: inline;
+}
+
+.btnWriteMessage img {
+  width: 25px;
+}
+
+.logout-btn img {
+  width: 20px;
+}
+
+.btnWriteMessage a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  background: #60e42c;
+  border-radius: 20px;
+  
+  pointer-events: none;
+  opacity: 0;
+}
+
+.btnWriteMessage a:hover {
+	background: rgba(0,0,0,0);
+	color: #3a7999;
+	box-shadow: inset 0 0 0 3px #60e42c;
+}
+
 .profileContent {
   margin-top: 50px;
 }
 
 .submitButton {
   text-align: center;
-}
-
-.submitButton input {
-  width: 15%;
-  background: #89c771;
 }
 
 .contacts textarea {
@@ -441,4 +467,32 @@ a {
   padding: 0 40px;
   text-decoration: none;
   color: #ffffff;
+}
+
+.profile {
+  border-radius: 20px;
+  background: #daddec;
+  border: 1px solid #333;
+}
+
+.inputField {
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.btnSave {
+  font-size: 20px;
+  width: 15%;
+  border-radius: 20px;
+  background: #60e42c;
+}
+
+.btnSave:hover {
+	background: rgba(0,0,0,0);
+	color: #3a7999;
+	box-shadow: inset 0 0 0 3px #60e42c;
+}
+
+.chat-message img {
+  width: 20px;
 }
