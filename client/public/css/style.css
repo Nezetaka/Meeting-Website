@@ -503,3 +503,13 @@ a {
   font-family: 'Righteous', cursive;
   color: #ccff96;
 }
+
+.messageAuthor {
+  text-decoration: none;
+  color: #7f8da3;
+}
+
+.messageAuthor:hover {
+  text-decoration: none;
+  color: #414956;
+}
