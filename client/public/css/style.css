@@ -453,8 +453,10 @@ a {
   padding: 10px 50px;
 }
 
-.menu ul li:first-child {
-  margin-left: 15.5%;
+.menu ul li a:first-child {
+}
+
+.menu ul li:nth-child(2n) {
 }
 
 .menu ul li:last-child {
@@ -495,4 +497,9 @@ a {
 
 .chat-message img {
   width: 20px;
+}
+
+#titleLink {
+  font-family: 'Righteous', cursive;
+  color: #ccff96;
 }
