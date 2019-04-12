@@ -1,6 +1,9 @@
 "use strict";
 
 const MessageModel = require('./models/messagesModel');
+const UsersModel = require('./models/usersModel');
+const express = require('express');
+const _ = require('lodash');
 
 module.exports = io => {
   io.on('connection', function (socket) {
@@ -9,11 +12,13 @@ module.exports = io => {
     // join to room
     socket.join('all');
 
-    socket.on('msg', content => {
+    socket.on('msg', async (content, req, res) => {
+      let user = await UsersModel.findOne({username: "admin"}).lean().exec();
+      //let user = await UsersModel.findOne({username: {$regex: _.escapeRegExp(req.body.username), $options: "i"}}).lean().exec();
       const obj = {
         date: new Date(),
         content: content,
-        username: socket.id
+        username: user.username
       };
 
        MessageModel.create(obj, err => {
