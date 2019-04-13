@@ -66,7 +66,7 @@ $( document ).ready( () => {
         var html = `
             <li>
                 <div class="message-data">
-                    <span class="message-data-name"><a class="messageAuthor" href="#">${message.username}</a></span>
+                    <span class="message-data-name"><a class="messageAuthor" href="/profile?userId=${message.username}">${message.username}</a></span>
                     <span class="message-data-time">${message.date}</span>
                 </div>
                 <div class="message my-message" dir="auto">${message.content}</div>

@@ -30,14 +30,19 @@ module.exports = app => {
   app.use('/assets', express.static('./client/public'));
 
   // chat page
+  app.get('/chat', checkAuth, (req, res) => {
+    res.render('index.html', { date: new Date(), username: req.user.username });
+  });
+
   app.get('/', checkAuth, (req, res) => {
     res.render('index.html', { date: new Date(), username: req.user.username });
   });
 
   // profile page
   app.get('/profile', checkAuth, async (req, res) => {
+    try{
     let user = await UsersModel.findOne({username: req.query.userId}).lean().exec();
-    
+
     res.render('index.html', {  profile: user.username,
                                 username: req.user.username,
                                 status: user.status,
@@ -46,8 +51,14 @@ module.exports = app => {
                                 contacts: user.contacts,
                                 about: user.about
                                 });
+    } catch (e) {
+      // debug
+      console.error("E, profile,", e);
+      res.status(500).send({message: "some error"});
+    }
   });
 
+  // rendering unknown page
   app.get('*', checkAuth, (req, res) => {
     res.render('index.html', { notFound: "404 PAGE NOT FOUND!" });
   });
