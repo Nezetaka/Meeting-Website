@@ -13,7 +13,7 @@ module.exports = io => {
     socket.join('all');
 
     socket.on('msg', async (content, req, res) => {
-      let user = await UsersModel.findOne({username: "admin"}).lean().exec();
+      let user = await UsersModel.findOne({username: "User1"}).lean().exec();
       //let user = await UsersModel.findOne({username: {$regex: _.escapeRegExp(req.body.username), $options: "i"}}).lean().exec();
       const obj = {
         date: new Date(),
