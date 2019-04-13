@@ -46,6 +46,7 @@ module.exports = app => {
     res.render('index.html', {  profile: user.username,
                                 username: req.user.username,
                                 status: user.status,
+                                //TO DO for empty fields
                                 birthday: user.birthday.toISOString().slice(0,10),
                                 address: user.address,
                                 contacts: user.contacts,
