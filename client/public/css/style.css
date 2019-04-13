@@ -513,3 +513,44 @@ a {
   text-decoration: none;
   color: #414956;
 }
+
+.warn {
+  margin-top: 15%;
+  text-align: center;
+}
+
+.warn__title h1 {
+  font-size: 72px;
+}
+
+.warn__subtitle h2 {
+  font-size: 26px;
+}
+
+.warn__link {
+  margin-top: 20px;
+}
+
+.warn__link a {
+  text-decoration: none;
+  padding: 15px 25px;
+  background: #0e397c;
+  color: #eaf2ff;
+  position: relative;
+}
+
+.warn__link a:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-top: 3px solid #eaf2ff;
+  border-right: 3px solid #eaf2ff;
+
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  z-index: 1;
+
+  transform: translateY(-50%)
+  rotate(-135deg);
+}

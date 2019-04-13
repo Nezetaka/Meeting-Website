@@ -32,6 +32,22 @@
             </div>
         </div>
         <script src="/assets/js/unauth.js"></script>
+    {% elif notFound %}
+    <div class="warn">
+
+      <div class="warn__title">
+        <h1>{{ notFound }}</h1>
+      </div>
+
+      <div class="warn__subtitle">
+        <h2>This page isn't available. Sorry about that.</h2>
+      </div>
+
+      <div class="warn__link">
+        <a href="/">Go Back</a>
+      </div>
+
+    </div>
     {% elif profile %}
     <div class="menu clearfix">
       <ul>

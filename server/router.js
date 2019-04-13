@@ -45,6 +45,10 @@ module.exports = app => {
                                 });
   });
 
+  app.get('*', checkAuth, (req, res) => {
+    res.render('index.html', { notFound: "404 PAGE NOT FOUND!" });
+  });
+
   // login
   app.post('/login', async (req, res) => {
     try {
