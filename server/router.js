@@ -35,13 +35,16 @@ module.exports = app => {
   });
 
   // profile page
-  app.get('/profile', checkAuth, (req, res) => {
-    res.render('index.html', {  profile: req.user.username,
-                                status: req.user.status,
-                                birthday: req.user.birthday.substring(0,10),
-                                address: req.user.address,
-                                contacts: req.user.contacts,
-                                about: req.user.about
+  app.get('/profile', checkAuth, async (req, res) => {
+    let user = await UsersModel.findOne({username: req.query.userId}).lean().exec();
+    
+    res.render('index.html', {  profile: user.username,
+                                username: req.user.username,
+                                status: user.status,
+                                birthday: user.birthday.toISOString().slice(0,10),
+                                address: user.address,
+                                contacts: user.contacts,
+                                about: user.about
                                 });
   });
 
