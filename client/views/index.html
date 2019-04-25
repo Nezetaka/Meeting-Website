@@ -49,12 +49,18 @@
 
     </div>
     {% elif profile %}
+    <script>
+      function update_href(id,value){
+      document.getElementById(id).href='/profile?userId='+value;
+      }
+    </script>
+
     <div class="menu clearfix">
       <ul>
         <li><a id="titleLink" class="headLinks" href="#"><span id="name">Social Channel</span></a></li>
         <li><a id="profileLink" class="headLinks" href="/profile?userId={{ username }}"><span id="name">{{ username }}</span></a></li>
         <li><a id="chatLink" class="headLinks" href="/chat"><span>Chat</span></a></li>
-        <li><a id="postLink" class="headLinks" href="/posts"><span>Posts</span></a></li>
+        <li><div class='a'><input type="text" placeholder="Search" name="simpleSearch" class="searchField" onchange="update_href('link', this.value );" /><a id='link' href="" class="searchLink"><img src="https://img.icons8.com/windows/32/000000/search.png"></a></div></li>
         <li><div class="controls">
             <a href="#" class="logout-btn">Logout   <img src="https://img.icons8.com/ios/50/000000/exit.png"></a>
         </div></li>
@@ -136,12 +142,17 @@
     <script src="/assets/js/auth.js"></script>
     <script src="/assets/js/unauth.js"></script>
     {% else %}
+    <script>
+      function update_href(id,value){
+      document.getElementById(id).href='/profile?userId='+value;
+      }
+    </script>
       <div class="menu clearfix">
         <ul>
           <li><a id="titleLink" class="headLinks" href="#"><span id="title">Social Channel</span></a></li>
           <li><a id="profileLink" class="headLinks" href="/profile?userId={{ username }}"><span id="name">{{ username }}</span></a></li>
           <li><a id="chatLink" class="headLinks" href="/chat"><span>Chat</span></a></li>
-          <li><a id="postLink"class="headLinks"  href="/posts"><span>Posts</span></a></li>
+          <li><div class='a'><input type="text" placeholder="Search" name="simpleSearch" class="searchField" onchange="update_href('link', this.value );" /><a id='link' href="" class="searchLink"><img src="https://img.icons8.com/windows/32/000000/search.png"></a></div></li>
           <li><div class="controls">
               <a href="#" class="logout-btn">Logout   <img src="https://img.icons8.com/ios/50/000000/exit.png"></a>
           </div></li>
