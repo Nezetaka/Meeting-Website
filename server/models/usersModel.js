@@ -9,7 +9,7 @@ const UsersSchema = new Schema ({
   password: {type: String},
   addedAt: {type: Date, default: Date.now},
   status: {type: String},
-  birthday: {type: Date},
+  birthday: {type: Date, default: Date.now},
   address: {type: String},
   contacts: {type: String},
   about: {type: String}
