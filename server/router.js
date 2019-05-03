@@ -42,15 +42,18 @@ module.exports = app => {
   app.get('/profile', checkAuth, async (req, res) => {
     try{
     let user = await UsersModel.findOne({username: req.query.userId}).lean().exec();
-
-    res.render('index.html', {  profile: user.username,
-                                username: req.user.username,
-                                status: user.status,
-                                birthday: user.birthday.toISOString().slice(0,10),
-                                address: user.address,
-                                contacts: user.contacts,
-                                about: user.about
-                                });
+    if (user != void(0)) {
+      res.render('index.html', {  profile: user.username,
+                                  username: req.user.username,
+                                  status: user.status,
+                                  birthday: user.birthday.toISOString().slice(0,10),
+                                  address: user.address,
+                                  contacts: user.contacts,
+                                  about: user.about
+                                  });
+    } else {
+      res.render('index.html', { notFound: "404 PAGE NOT FOUND!" });
+    }
     } catch (e) {
       // debug
       console.error("E, profile,", e);
